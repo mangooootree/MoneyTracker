@@ -1,11 +1,11 @@
 package com.osipov.moneytracker;
 
-public class Record {
+public class Item {
     private final String title;
     private final int price;
     private String comment;
 
-    public Record(String name, int price) {
+    public Item(String name, int price) {
         this.title = name;
         this.price = price;
     }

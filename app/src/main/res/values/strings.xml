@@ -2,4 +2,14 @@
     <string name="app_name">MoneyTracker</string>
     <string name="itemName">Название</string>
     <string name="itemPrice">р.</string>
+
+    <string name="tabIncomes">Доходы</string>
+    <string name="tabExpenses">Расходы</string>
+    <string name="tabBalance">Баланс</string>
+
+    <string-array name="tabs">
+        <item>@string/tabIncomes</item>
+        <item>@string/tabExpenses</item>
+        <item>@string/tabBalance</item>
+    </string-array>
 </resources>
