@@ -13,26 +13,23 @@ public class MainPagesAdapter extends FragmentPagerAdapter {
     private static final int PAGE_EXPENSES = 1;
     private static final int PAGE_BALANCE = 2;
 
-    private int currentPage;
+    private String currentPage;
     private String[] tabTitle;
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case PAGE_INCOMES:
-                currentPage = ItemsFragment.TYPE_INCOMES;
+                currentPage = Item.TYPE_INCOMES;
                 break;
 
             case PAGE_EXPENSES:
-                currentPage = ItemsFragment.TYPE_EXPENSES;
+                currentPage = Item.TYPE_EXPENSES;
 
-            case PAGE_BALANCE:
-                currentPage = ItemsFragment.TYPE_BALANCE;
-                break;
         }
         Fragment fragment = new ItemsFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(ItemsFragment.TYPE_KEY, currentPage);
+        bundle.putString(ItemsFragment.TYPE_KEY, currentPage);
         fragment.setArguments(bundle);
         return fragment;
     }

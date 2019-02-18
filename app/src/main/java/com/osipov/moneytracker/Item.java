@@ -1,24 +1,18 @@
 package com.osipov.moneytracker;
 
 public class Item {
-    private final String title;
-    private final int price;
-    private String comment;
+    public int id;
+    public String name;
+    public int price;
+    public String type;
 
-    public Item(String name, int price) {
-        this.title = name;
+    public static final String TYPE_UNKNOWN = "unknown";
+    public static final String TYPE_INCOMES = "incomes";
+    public static final String TYPE_EXPENSES = "expenses";
+
+    public Item(String name, int price, String type) {
+        this.name = name;
         this.price = price;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String getComment() {
-        return comment;
+        this.type = type;
     }
 }

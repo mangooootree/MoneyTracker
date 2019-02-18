@@ -14,21 +14,22 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecordViewHolder> {
 
     private List<Item> items = new ArrayList<>();
 
-    public ItemsAdapter() {
-        createRecords();
+    public void setData(List<Item> data) {
+        this.items = data;
+        notifyDataSetChanged();
     }
 
     private void createRecords() {
-        items.add(new Item("Хлеб", 3));
-        items.add(new Item("Сыр", 43445));
-        items.add(new Item("Масло", 5));
-        items.add(new Item("Мед", 5));
-        items.add(new Item("Мясо", 10));
-        items.add(new Item("Рыба", 6555));
-        items.add(new Item("Колбаса", 93));
-        items.add(new Item("Сосиски", 444));
-        items.add(new Item("Пиво", 2));
-        items.add(new Item("Яйца", 2));
+        items.add(new Item("Хлеб", 3, Item.TYPE_EXPENSES));
+        items.add(new Item("Сыр", 43445, Item.TYPE_EXPENSES));
+        items.add(new Item("Масло", 5, Item.TYPE_EXPENSES));
+        items.add(new Item("Мед", 5, Item.TYPE_EXPENSES));
+        items.add(new Item("Мясо", 10, Item.TYPE_EXPENSES));
+        items.add(new Item("Рыба", 6555, Item.TYPE_EXPENSES));
+        items.add(new Item("Колбаса", 93, Item.TYPE_EXPENSES));
+        items.add(new Item("Сосиски", 444, Item.TYPE_EXPENSES));
+        items.add(new Item("Пиво", 2, Item.TYPE_EXPENSES));
+        items.add(new Item("Яйца", 2, Item.TYPE_EXPENSES));
     }
 
     @NonNull
@@ -55,13 +56,13 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecordViewHolder> {
 
         RecordViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
+            title = itemView.findViewById(R.id.name);
             price = itemView.findViewById(R.id.price);
         }
 
         void applyData(Item item) {
-            title.setText(item.getTitle());
-            price.setText(String.valueOf(item.getPrice()));
+            title.setText(item.name);
+            price.setText(String.valueOf(item.price));
         }
     }
 }
