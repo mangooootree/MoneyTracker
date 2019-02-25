@@ -5,8 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:orientation="vertical"
     tools:context=".AddItemActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:elevation="8dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +22,7 @@
         android:orientation="horizontal"
         android:background="@color/white"
         android:padding="10dp"
+        android:elevation="4dp"
         android:gravity="center_vertical">
 
         <EditText
@@ -46,7 +55,7 @@
 
         <Button
             android:id="@+id/add_btn"
-            android:enabled="false"
+            android:enabled="true"
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:background="@drawable/ic_add"

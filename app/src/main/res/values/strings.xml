@@ -2,6 +2,8 @@
     <string name="app_name">MoneyTracker</string>
     <string name="itemName">Название</string>
     <string name="itemPrice">р.</string>
+    <string name="main_screen_title">Учет бюджета</string>
+    <string name="itemAdd">Добавить</string>
 
     <string name="tabIncomes">Доходы</string>
     <string name="tabExpenses">Расходы</string>

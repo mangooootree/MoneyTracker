@@ -15,21 +15,31 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecordViewHolder> {
     private List<Item> items = new ArrayList<>();
 
     public void setData(List<Item> data) {
-        this.items = data;
+        createRecords();
+        //this.items = data;
         notifyDataSetChanged();
     }
 
+    public void addItem(Item item) {
+        items.add(0, item);
+        notifyItemInserted(0);
+    }
+
     private void createRecords() {
-        items.add(new Item("Хлеб", 3, Item.TYPE_EXPENSES));
-        items.add(new Item("Сыр", 43445, Item.TYPE_EXPENSES));
-        items.add(new Item("Масло", 5, Item.TYPE_EXPENSES));
-        items.add(new Item("Мед", 5, Item.TYPE_EXPENSES));
-        items.add(new Item("Мясо", 10, Item.TYPE_EXPENSES));
-        items.add(new Item("Рыба", 6555, Item.TYPE_EXPENSES));
-        items.add(new Item("Колбаса", 93, Item.TYPE_EXPENSES));
-        items.add(new Item("Сосиски", 444, Item.TYPE_EXPENSES));
-        items.add(new Item("Пиво", 2, Item.TYPE_EXPENSES));
-        items.add(new Item("Яйца", 2, Item.TYPE_EXPENSES));
+        items.add(new Item("Хлеб", "3", Item.TYPE_EXPENSES));
+        items.add(new Item("Сыр", "43445", Item.TYPE_EXPENSES));
+        items.add(new Item("Масло", "5", Item.TYPE_EXPENSES));
+        items.add(new Item("Мед", "5", Item.TYPE_EXPENSES));
+        items.add(new Item("Мясо", "10", Item.TYPE_EXPENSES));
+        items.add(new Item("Рыба", "6555", Item.TYPE_EXPENSES));
+        items.add(new Item("Колбаса", "93", Item.TYPE_EXPENSES));
+        items.add(new Item("Сосиски", "444", Item.TYPE_EXPENSES));
+        items.add(new Item("Пиво", "2", Item.TYPE_EXPENSES));
+        items.add(new Item("Яйца", "2", Item.TYPE_EXPENSES));
+        items.add(new Item("Рыба", "6555", Item.TYPE_EXPENSES));
+        items.add(new Item("Колбаса", "93", Item.TYPE_EXPENSES));
+        items.add(new Item("Сосиски", "444", Item.TYPE_EXPENSES));
+        items.add(new Item("Пиво", "2", Item.TYPE_EXPENSES));
     }
 
     @NonNull
@@ -62,7 +72,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecordViewHolder> {
 
         void applyData(Item item) {
             title.setText(item.name);
-            price.setText(String.valueOf(item.price));
+            price.setText(item.price);
         }
     }
 }
